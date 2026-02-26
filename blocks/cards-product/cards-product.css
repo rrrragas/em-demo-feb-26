@@ -1,4 +1,4 @@
-/* Cards Product - AT&T horizontally scrolling product tiles (Mobile, Internet, Voice, etc.) */
+/* Cards Product - AT&T vertical product tiles (Mobile, Internet, Voice, etc.) */
 .cards-product > ul {
   list-style: none;
   margin: 0;
@@ -17,49 +17,50 @@
 
 .cards-product > ul > li {
   background-color: var(--background-color);
-  border: 1px solid var(--grey-200);
   border-radius: 16px;
   overflow: hidden;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   min-width: 280px;
   flex: 0 0 85%;
   scroll-snap-align: start;
 }
 
+/* Image - full width at top of card with rounded top corners */
 .cards-product .cards-product-card-image {
   line-height: 0;
-  flex: 0 0 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 16px;
+  border-radius: 16px 16px 0 0;
+  overflow: hidden;
 }
 
 .cards-product .cards-product-card-image img {
-  width: 64px;
-  height: 64px;
-  object-fit: contain;
-  aspect-ratio: 1 / 1;
-}
-
-.cards-product .cards-product-card-body {
-  padding: 20px 20px 20px 0;
-  flex: 1;
-}
-
-.cards-product .cards-product-card-body h3,
-.cards-product .cards-product-card-body strong {
-  font-size: var(--heading-font-size-l);
-  font-weight: 400;
-  color: var(--text-color);
-  margin: 0 0 8px;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 800 / 500;
+  object-fit: cover;
   display: block;
 }
 
+/* Card body content below image */
+.cards-product .cards-product-card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-product .cards-product-card-body strong {
+  font-size: 26px;
+  font-weight: 400;
+  color: var(--text-color);
+  margin: 0 0 12px;
+  display: block;
+  line-height: 1.2;
+}
+
 .cards-product .cards-product-card-body p {
-  font-size: var(--body-font-size-s);
-  color: var(--text-color-secondary);
+  font-size: 16px;
+  color: var(--text-color);
   line-height: 1.4;
   margin: 0 0 8px;
 }
@@ -71,21 +72,30 @@
   color: var(--grey-500);
   display: block;
   margin-top: 8px;
+  line-height: 1.4;
 }
 
-/* CTA link */
+/* CTA link - pill button */
 .cards-product .cards-product-card-body a:any-link {
-  font-size: var(--body-font-size-s);
-  font-weight: 700;
-  color: var(--link-color);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(0 56 143);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 400;
   text-decoration: none;
-  display: inline-block;
-  margin-top: 12px;
+  border-radius: 28px;
+  padding: 0 32px;
+  height: 48px;
+  margin-top: auto;
+  width: fit-content;
 }
 
 .cards-product .cards-product-card-body a:hover {
-  color: var(--link-hover-color);
-  text-decoration: underline;
+  background-color: rgb(0 45 115);
+  color: #fff;
+  text-decoration: none;
 }
 
 @media (width >= 600px) {
@@ -98,18 +108,12 @@
   .cards-product > ul {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    gap: 24px;
     overflow-x: visible;
   }
 
   .cards-product > ul > li {
     min-width: unset;
     flex: unset;
-  }
-}
-
-@media (width >= 1200px) {
-  .cards-product > ul {
-    grid-template-columns: repeat(3, 1fr);
   }
 }
