@@ -1,0 +1,41 @@
+{
+  "variantName": "hero-dark",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-02-26T05:42:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.business.att.com/",
+    "originPage": "AT&T Business homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "feature-hero",
+    "imagePattern": "large",
+    "structure": "eyebrow + heading + description + checklist + dual CTAs + side image"
+  },
+  "contentPattern": {
+    "structure": "eyebrow + heading + description + CTAs",
+    "buttonCount": 2,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "product feature highlights",
+      "dark-themed hero sections",
+      "pages with dual call-to-action",
+      "guarantee or trust sections"
+    ],
+    "notSuitableFor": [
+      "light-themed landing pages",
+      "simple text-only heroes",
+      "pages without background images"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-26T05:42:00.000Z"
+  }
+}

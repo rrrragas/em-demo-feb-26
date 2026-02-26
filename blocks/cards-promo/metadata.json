@@ -1,0 +1,32 @@
+{
+  "variantName": "cards-promo",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-02-26T05:42:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.business.att.com/",
+    "originPage": "AT&T Business homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "promotional-cards",
+    "imagePattern": "large",
+    "structure": "image + eyebrow + heading + description + legal + CTA"
+  },
+  "contentPattern": {
+    "structure": "3 promo cards with images, eyebrow, heading, CTA",
+    "buttonCount": 3,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": ["promotional offer sections", "deal highlights", "campaign landing pages"],
+    "notSuitableFor": ["product grids", "testimonial sections", "icon-based feature lists"]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-26T05:42:00.000Z"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "variantName": "columns-award",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-02-26T05:42:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.business.att.com/",
+    "originPage": "AT&T Business homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "grey",
+    "density": "spacious",
+    "purpose": "award-banner",
+    "imagePattern": "large",
+    "structure": "image column + text column with heading and description"
+  },
+  "contentPattern": {
+    "structure": "2 columns: images | heading + description + legal",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["award or recognition sections", "partner logos with text", "certification displays"],
+    "notSuitableFor": ["multi-column link lists", "product comparisons", "feature grids"]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-26T05:42:00.000Z"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "templates": [
+    {
+      "name": "att-business-homepage",
+      "urls": [
+        "https://www.business.att.com/"
+      ],
+      "description": "AT&T Business homepage with hero, product cards, promotional cards, value propositions, award banner, dark hero sections, offer columns, industry carousel, testimonials, contact form, and link directory",
+      "blocks": [
+        {
+          "name": "hero-banner",
+          "instances": [
+            ".hero.aem-GridColumn .hero-wrapper.theme-light-bg-img"
+          ]
+        },
+        {
+          "name": "cards-product",
+          "instances": [
+            ".multi-tile-cards.aem-GridColumn:first-of-type .multi-tile-main"
+          ]
+        },
+        {
+          "name": "cards-promo",
+          "instances": [
+            ".flex-cards.aem-GridColumn .flex-card-main"
+          ]
+        },
+        {
+          "name": "cards-feature",
+          "instances": [
+            ".generic-list-value-prop.aem-GridColumn"
+          ]
+        },
+        {
+          "name": "columns-award",
+          "instances": [
+            ".offer.aem-GridColumn:nth-of-type(1)"
+          ]
+        },
+        {
+          "name": "hero-dark",
+          "instances": [
+            ".hero.aem-GridColumn .hero-wrapper.theme-dark-bg-img"
+          ]
+        },
+        {
+          "name": "columns-offer",
+          "instances": [
+            ".offer.aem-GridColumn:nth-of-type(2)"
+          ]
+        },
+        {
+          "name": "carousel-industry",
+          "instances": [
+            ".story-stack.aem-GridColumn"
+          ]
+        },
+        {
+          "name": "cards-testimonial",
+          "instances": [
+            ".multi-tile-cards.aem-GridColumn:nth-of-type(2) .multi-tile-main"
+          ]
+        },
+        {
+          "name": "columns-links",
+          "instances": [
+            ".link-farm.aem-GridColumn"
+          ]
+        },
+        {
+          "name": "section-highlight",
+          "instances": [
+            ".offer.aem-GridColumn:nth-of-type(1)",
+            ".micro-banner.aem-GridColumn",
+            ".rai-form.aem-GridColumn",
+            ".link-farm.aem-GridColumn"
+          ],
+          "section": "highlight"
+        },
+        {
+          "name": "section-dark",
+          "instances": [
+            ".hero.aem-GridColumn .hero-wrapper.theme-dark-bg-img"
+          ],
+          "section": "dark"
+        }
+      ]
+    }
+  ]
+}

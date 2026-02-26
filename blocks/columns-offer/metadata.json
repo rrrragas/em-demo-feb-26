@@ -1,0 +1,32 @@
+{
+  "variantName": "columns-offer",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-02-26T05:42:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.business.att.com/",
+    "originPage": "AT&T Business homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "offer-cta",
+    "imagePattern": "large",
+    "structure": "text column with eyebrow, heading, checklist, CTA + image column"
+  },
+  "contentPattern": {
+    "structure": "2 columns: text with checklist | image",
+    "buttonCount": 1,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": ["switch/offer CTAs", "benefit summaries with checklists", "side-by-side text and image sections"],
+    "notSuitableFor": ["link directories", "award banners", "multi-column grids"]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-26T05:42:00.000Z"
+  }
+}
