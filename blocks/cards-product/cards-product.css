@@ -1,3 +1,8 @@
+/* Section heading above cards - centered */
+.cards-product-container > .default-content-wrapper {
+  text-align: center;
+}
+
 /* Cards Product - AT&T vertical product tiles (Mobile, Internet, Voice, etc.) */
 .cards-product > ul {
   list-style: none;
@@ -16,7 +21,6 @@
 }
 
 .cards-product > ul > li {
-  background-color: var(--background-color);
   border-radius: 16px;
   overflow: hidden;
   display: flex;
@@ -47,6 +51,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  background-color: #f2fafd;
 }
 
 .cards-product .cards-product-card-body strong {
@@ -59,20 +64,20 @@
 }
 
 .cards-product .cards-product-card-body p {
-  font-size: 16px;
-  color: var(--text-color);
+  font-size: 15px;
+  color: #454b52;
   line-height: 1.4;
   margin: 0 0 8px;
 }
 
 /* Disclaimer text */
 .cards-product .cards-product-card-body em {
-  font-size: var(--body-font-size-xs);
+  font-size: 12px;
   font-style: normal;
-  color: var(--grey-500);
+  color: #1d2329;
   display: block;
   margin-top: 8px;
-  line-height: 1.4;
+  line-height: 1.2;
 }
 
 /* CTA link - pill button */
