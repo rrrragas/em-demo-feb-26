@@ -1,5 +1,3 @@
-import { createOptimizedPicture } from '../../scripts/aem.js';
-
 export default function decorate(block) {
   /* change to ul, li */
   const ul = document.createElement('ul');
@@ -11,10 +9,6 @@ export default function decorate(block) {
       else div.className = 'cards-testimonial-card-body';
     });
     ul.append(li);
-  });
-  ul.querySelectorAll('picture > img').forEach((img) => {
-    const optimizedPic = createOptimizedPicture(img.src, img.alt, false, [{ width: '750' }]);
-    img.closest('picture').replaceWith(optimizedPic);
   });
   block.textContent = '';
   block.append(ul);

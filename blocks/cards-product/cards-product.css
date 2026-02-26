@@ -54,33 +54,85 @@
   background-color: #f2fafd;
 }
 
-.cards-product .cards-product-card-body strong {
+/* Card title */
+.cards-product .cards-product-title {
   font-size: 26px;
   font-weight: 400;
   color: var(--text-color);
   margin: 0 0 12px;
-  display: block;
   line-height: 1.2;
 }
 
-.cards-product .cards-product-card-body p {
+/* Card description */
+.cards-product .cards-product-desc {
   font-size: 15px;
   color: #454b52;
   line-height: 1.4;
   margin: 0 0 8px;
 }
 
+/* Pricing section */
+.cards-product .cards-product-pricing {
+  margin: 8px 0;
+}
+
+.cards-product .cards-product-price-label {
+  font-size: 15px;
+  color: #454b52;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.cards-product .cards-product-price-amount {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-color);
+  line-height: 1;
+  margin: 0;
+}
+
+.cards-product .cards-product-dollar {
+  font-size: 20px;
+  vertical-align: super;
+  font-weight: 700;
+}
+
+.cards-product .cards-product-period {
+  font-size: 20px;
+  font-weight: 400;
+}
+
+.cards-product .cards-product-price-sub {
+  font-size: 12px;
+  color: #454b52;
+  margin: 2px 0 0;
+  line-height: 1.3;
+}
+
+/* Custom pricing text (bold) */
+.cards-product .cards-product-custom-pricing {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 8px 0;
+  line-height: 1.4;
+}
+
 /* Disclaimer text */
-.cards-product .cards-product-card-body em {
+.cards-product .cards-product-disclaimer {
   font-size: 12px;
   font-style: normal;
   color: #1d2329;
-  display: block;
-  margin-top: 8px;
+  margin: 8px 0 0;
   line-height: 1.2;
 }
 
 /* CTA link - pill button */
+.cards-product .cards-product-cta {
+  margin-top: auto;
+  padding-top: 16px;
+}
+
 .cards-product .cards-product-card-body a:any-link {
   display: inline-flex;
   align-items: center;
@@ -93,7 +145,6 @@
   border-radius: 28px;
   padding: 0 32px;
   height: 48px;
-  margin-top: auto;
   width: fit-content;
 }
 
