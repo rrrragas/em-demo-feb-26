@@ -13,21 +13,35 @@
   overflow: hidden;
 }
 
-/* Background image positioning */
-.hero-banner picture {
+/* Background image layer */
+.hero-banner .hero-banner-bg {
   position: absolute;
-  z-index: -1;
+  z-index: 0;
   inset: 0;
 }
 
-.hero-banner img {
+.hero-banner .hero-banner-bg picture {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-banner .hero-banner-bg img {
   object-fit: cover;
   width: 100%;
   height: 100%;
 }
 
+/* Mobile: show mobile image, hide desktop */
+.hero-banner .hero-banner-desktop {
+  display: none;
+}
+
+.hero-banner .hero-banner-mobile {
+  display: block;
+}
+
 /* Content container */
-.hero-banner > div:last-child {
+.hero-banner .hero-banner-content {
   position: relative;
   z-index: 1;
   max-width: var(--content-max-width);
@@ -35,18 +49,9 @@
   width: 100%;
 }
 
-/* Description */
-.hero-banner p {
-  font-size: var(--body-font-size-m);
-  color: var(--text-color-secondary);
-  line-height: 1.4;
-  max-width: 540px;
-  margin: 0 0 16px;
-}
-
-/* Eyebrow text (first paragraph) */
-.hero-banner > div:last-child > p:first-child {
-  font-size: var(--heading-font-size-s);
+/* Eyebrow text */
+.hero-banner .hero-banner-eyebrow {
+  font-size: 16px;
   font-weight: 400;
   color: var(--text-color);
   margin: 0 0 8px;
@@ -56,13 +61,22 @@
 /* Heading */
 .hero-banner h1,
 .hero-banner h2 {
-  font-size: var(--heading-font-size-xxl);
+  font-size: 32px;
   font-weight: 400;
   color: var(--text-color);
   line-height: 1.15;
   letter-spacing: -0.03em;
   margin: 8px 0 16px;
   max-width: 600px;
+}
+
+/* Description */
+.hero-banner .hero-banner-description {
+  font-size: var(--body-font-size-m);
+  color: var(--text-color-secondary);
+  line-height: 1.4;
+  max-width: 540px;
+  margin: 0 0 16px;
 }
 
 /* No-image variant */
@@ -74,7 +88,8 @@
 /* stylelint-disable no-descending-specificity */
 .hero-banner.no-image h1,
 .hero-banner.no-image h2,
-.hero-banner.no-image p {
+.hero-banner.no-image .hero-banner-eyebrow,
+.hero-banner.no-image .hero-banner-description {
   color: var(--text-color);
 }
 /* stylelint-enable no-descending-specificity */
@@ -84,6 +99,7 @@
   margin: 16px 0 0;
 }
 
+/* ===== Tablet ===== */
 @media (width >= 900px) {
   .hero-banner {
     padding: 64px 32px;
@@ -92,6 +108,52 @@
 
   .hero-banner h1,
   .hero-banner h2 {
+    font-size: 38px;
     max-width: 700px;
+  }
+
+  .hero-banner .hero-banner-eyebrow {
+    font-size: 18px;
+  }
+}
+
+/* ===== Desktop (1280px+) ===== */
+@media (width >= 1280px) {
+  .hero-banner {
+    padding: 0 32px;
+    min-height: 500px;
+  }
+
+  /* Desktop: show desktop image, hide mobile */
+  .hero-banner .hero-banner-desktop {
+    display: block;
+  }
+
+  .hero-banner .hero-banner-mobile {
+    display: none;
+  }
+
+  .hero-banner .hero-banner-content {
+    max-width: 616px;
+    margin: 0;
+    padding: 0 36px;
+  }
+
+  .hero-banner .hero-banner-eyebrow {
+    font-size: 20px;
+    line-height: 1.05;
+  }
+
+  .hero-banner h1,
+  .hero-banner h2 {
+    font-size: 48px;
+    line-height: 1.15;
+    max-width: 616px;
+  }
+
+  .hero-banner .hero-banner-description {
+    font-size: 18px;
+    line-height: 1.4;
+    max-width: 540px;
   }
 }
