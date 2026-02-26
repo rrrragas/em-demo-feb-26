@@ -1,9 +1,10 @@
-/* header and nav layout */
+/* AT&T Business header - white background, fixed position, two-tier nav */
 header .nav-wrapper {
   background-color: var(--background-color);
   width: 100%;
-  z-index: 2;
+  z-index: 100;
   position: fixed;
+  border-bottom: 1px solid var(--grey-200);
 }
 
 header nav {
@@ -15,9 +16,9 @@ header nav {
   align-items: center;
   gap: 0 24px;
   margin: auto;
-  max-width: 1248px;
+  max-width: 1324px;
   height: var(--nav-height);
-  padding: 0 24px;
+  padding: 0 16px;
   font-family: var(--body-font-family);
 }
 
@@ -38,9 +39,10 @@ header nav[aria-expanded='true'] {
   header nav {
     display: flex;
     justify-content: space-between;
-    gap: 0 32px;
-    max-width: 1264px;
+    gap: 0 24px;
+    max-width: 1324px;
     padding: 0 32px;
+    height: 81px;
   }
 
   header nav[aria-expanded='true'] {
@@ -56,6 +58,11 @@ header nav p {
 
 header nav a:any-link {
   color: currentcolor;
+  text-decoration: none;
+}
+
+header nav a:hover {
+  color: var(--att-blue);
 }
 
 /* hamburger */
@@ -142,14 +149,14 @@ header nav[aria-expanded='true'] .nav-hamburger-icon::after {
 /* brand */
 header .nav-brand {
   grid-area: brand;
-  flex-basis: 128px;
+  flex-basis: 161px;
   font-size: var(--heading-font-size-s);
   font-weight: 700;
   line-height: 1;
 }
 
 header nav .nav-brand img {
-  width: 128px;
+  width: 161px;
   height: auto;
 }
 
@@ -170,11 +177,12 @@ header nav[aria-expanded='true'] .nav-sections {
 header nav .nav-sections ul {
   list-style: none;
   padding-left: 0;
-  font-size: var(--body-font-size-s);
+  font-size: 14px;
 }
 
 header nav .nav-sections ul > li {
   font-weight: 500;
+  color: var(--text-color-secondary);
 }
 
 header nav .nav-sections ul > li > ul {
@@ -242,11 +250,13 @@ header nav .nav-sections ul > li > ul > li {
     display: block;
     position: absolute;
     left: -24px;
-    width: 200px;
+    width: 220px;
     top: 150%;
     padding: 16px;
-    background-color: var(--light-color);
+    background-color: var(--background-color);
     white-space: initial;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgb(0 0 0 / 12%);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
@@ -258,7 +268,7 @@ header nav .nav-sections ul > li > ul > li {
     height: 0;
     border-left: 8px solid transparent;
     border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
+    border-bottom: 8px solid var(--background-color);
   }
 
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
@@ -269,4 +279,25 @@ header nav .nav-sections ul > li > ul > li {
 /* tools */
 header nav .nav-tools {
   grid-area: tools;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color-secondary);
+}
+
+header nav .nav-tools .default-content-wrapper > ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+header nav .nav-tools a:any-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color-secondary);
 }
