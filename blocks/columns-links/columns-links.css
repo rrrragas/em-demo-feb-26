@@ -1,33 +1,64 @@
+/* Columns Links - AT&T "Looking for more?" link directory */
 .columns-links > div {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+
+.columns-links > div > div {
+  order: unset;
 }
 
 .columns-links img {
   width: 100%;
 }
 
-.columns-links > div > div {
-  order: 1;
-}
-
+/* Hide image columns in this variant */
 .columns-links > div > .columns-links-img-col {
-  order: 0;
+  display: none;
 }
 
-.columns-links > div > .columns-links-img-col img {
+/* Link list columns */
+.columns-links ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.columns-links li {
+  padding: 6px 0;
+  border-bottom: 1px solid var(--grey-200);
+}
+
+.columns-links li:last-child {
+  border-bottom: none;
+}
+
+.columns-links a:any-link {
+  font-size: var(--body-font-size-s);
+  color: var(--text-color-secondary);
+  text-decoration: none;
+  line-height: 1.4;
   display: block;
+  padding: 4px 0;
+  transition: color 0.2s;
+}
+
+.columns-links a:hover {
+  color: var(--link-color);
+  text-decoration: underline;
+}
+
+@media (width >= 600px) {
+  .columns-links > div {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+  }
 }
 
 @media (width >= 900px) {
   .columns-links > div {
-    align-items: center;
-    flex-direction: unset;
-    gap: 24px;
-  }
-
-  .columns-links > div > div {
-    flex: 1;
-    order: unset;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
   }
 }

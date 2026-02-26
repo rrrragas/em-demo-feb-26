@@ -1,27 +1,115 @@
+/* Cards Product - AT&T horizontally scrolling product tiles (Mobile, Internet, Voice, etc.) */
 .cards-product > ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.cards-product > ul::-webkit-scrollbar {
+  display: none;
 }
 
 .cards-product > ul > li {
-  border: 1px solid #dadada;
   background-color: var(--background-color);
-}
-
-.cards-product .cards-product-card-body {
-  margin: 16px;
+  border: 1px solid var(--grey-200);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+  min-width: 280px;
+  flex: 0 0 85%;
+  scroll-snap-align: start;
 }
 
 .cards-product .cards-product-card-image {
   line-height: 0;
+  flex: 0 0 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
 }
 
-.cards-product > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.cards-product .cards-product-card-image img {
+  width: 64px;
+  height: 64px;
+  object-fit: contain;
+  aspect-ratio: 1 / 1;
+}
+
+.cards-product .cards-product-card-body {
+  padding: 20px 20px 20px 0;
+  flex: 1;
+}
+
+.cards-product .cards-product-card-body h3,
+.cards-product .cards-product-card-body strong {
+  font-size: var(--heading-font-size-l);
+  font-weight: 400;
+  color: var(--text-color);
+  margin: 0 0 8px;
+  display: block;
+}
+
+.cards-product .cards-product-card-body p {
+  font-size: var(--body-font-size-s);
+  color: var(--text-color-secondary);
+  line-height: 1.4;
+  margin: 0 0 8px;
+}
+
+/* Disclaimer text */
+.cards-product .cards-product-card-body em {
+  font-size: var(--body-font-size-xs);
+  font-style: normal;
+  color: var(--grey-500);
+  display: block;
+  margin-top: 8px;
+}
+
+/* CTA link */
+.cards-product .cards-product-card-body a:any-link {
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  color: var(--link-color);
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 12px;
+}
+
+.cards-product .cards-product-card-body a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+@media (width >= 600px) {
+  .cards-product > ul > li {
+    flex: 0 0 45%;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-product > ul {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    overflow-x: visible;
+  }
+
+  .cards-product > ul > li {
+    min-width: unset;
+    flex: unset;
+  }
+}
+
+@media (width >= 1200px) {
+  .cards-product > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
