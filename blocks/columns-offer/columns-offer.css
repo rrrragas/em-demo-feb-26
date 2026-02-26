@@ -1,10 +1,8 @@
+/* Columns Offer - AT&T "Switch. Save. Soar." offer with text + image */
 .columns-offer > div {
   display: flex;
   flex-direction: column;
-}
-
-.columns-offer img {
-  width: 100%;
+  gap: 32px;
 }
 
 .columns-offer > div > div {
@@ -15,19 +13,96 @@
   order: 0;
 }
 
+.columns-offer img {
+  width: 100%;
+  border-radius: 16px;
+}
+
 .columns-offer > div > .columns-offer-img-col img {
   display: block;
+  border-radius: 16px;
+}
+
+.columns-offer p {
+  font-size: var(--body-font-size-m);
+  color: var(--text-color-secondary);
+  line-height: 1.4;
+  margin: 0 0 8px;
+}
+
+/* Eyebrow text */
+.columns-offer > div > div:not(.columns-offer-img-col) > p:first-child {
+  font-size: var(--heading-font-size-s);
+  font-weight: 400;
+  color: var(--text-color);
+  margin: 0 0 8px;
+}
+
+/* Heading */
+.columns-offer h2,
+.columns-offer strong {
+  font-size: var(--heading-font-size-xl);
+  font-weight: 400;
+  color: var(--text-color);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  display: block;
+  margin: 0 0 16px;
+}
+
+/* List items with checkmark style */
+.columns-offer ul {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.columns-offer li {
+  font-size: var(--body-font-size-m);
+  color: var(--text-color-secondary);
+  line-height: 1.4;
+  padding: 4px 0 4px 28px;
+  position: relative;
+}
+
+.columns-offer li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--att-accent-blue);
+  font-weight: 700;
+}
+
+/* Disclaimer text */
+.columns-offer em {
+  font-size: var(--body-font-size-xs);
+  font-style: normal;
+  color: var(--grey-500);
+}
+
+/* CTA link */
+.columns-offer a:any-link {
+  color: var(--link-color);
+  font-weight: 700;
+}
+
+.columns-offer a:hover {
+  color: var(--link-hover-color);
 }
 
 @media (width >= 900px) {
   .columns-offer > div {
+    flex-direction: row;
     align-items: center;
-    flex-direction: unset;
-    gap: 24px;
+    gap: 48px;
   }
 
   .columns-offer > div > div {
     flex: 1;
     order: unset;
+  }
+
+  .columns-offer > div > .columns-offer-img-col {
+    flex: 0 0 45%;
   }
 }

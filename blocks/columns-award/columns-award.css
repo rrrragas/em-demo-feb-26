@@ -1,10 +1,10 @@
+/* Columns Award - AT&T J.D. Power award banner with image + text side by side */
 .columns-award > div {
   display: flex;
   flex-direction: column;
-}
-
-.columns-award img {
-  width: 100%;
+  align-items: center;
+  text-align: center;
+  gap: 24px;
 }
 
 .columns-award > div > div {
@@ -15,19 +15,64 @@
   order: 0;
 }
 
+.columns-award img {
+  width: 100%;
+}
+
 .columns-award > div > .columns-award-img-col img {
   display: block;
+  max-width: 200px;
+  height: auto;
+}
+
+/* Heading */
+.columns-award h2,
+.columns-award strong {
+  font-size: var(--heading-font-size-xl);
+  font-weight: 400;
+  color: var(--text-color);
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+  display: block;
+  margin: 0 0 12px;
+}
+
+.columns-award p {
+  font-size: var(--body-font-size-m);
+  color: var(--text-color-secondary);
+  line-height: 1.4;
+  margin: 0 0 8px;
+}
+
+/* Disclaimer text */
+.columns-award em {
+  font-size: var(--body-font-size-xs);
+  font-style: normal;
+  color: var(--grey-500);
+}
+
+.columns-award a:any-link {
+  color: var(--link-color);
 }
 
 @media (width >= 900px) {
   .columns-award > div {
+    flex-direction: row;
+    text-align: left;
+    gap: 48px;
     align-items: center;
-    flex-direction: unset;
-    gap: 24px;
   }
 
   .columns-award > div > div {
     flex: 1;
     order: unset;
+  }
+
+  .columns-award > div > .columns-award-img-col {
+    flex: 0 0 auto;
+  }
+
+  .columns-award > div > .columns-award-img-col img {
+    max-width: 300px;
   }
 }

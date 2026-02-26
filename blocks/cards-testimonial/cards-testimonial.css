@@ -1,27 +1,111 @@
+/* Cards Testimonial - AT&T customer story cards with category eyebrow and quote */
 .cards-testimonial > ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  display: flex;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 8px;
+}
+
+.cards-testimonial > ul::-webkit-scrollbar {
+  display: none;
 }
 
 .cards-testimonial > ul > li {
-  border: 1px solid #dadada;
   background-color: var(--background-color);
-}
-
-.cards-testimonial .cards-testimonial-card-body {
-  margin: 16px;
+  border: 1px solid var(--grey-200);
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  min-width: 280px;
+  flex: 0 0 85%;
+  scroll-snap-align: start;
 }
 
 .cards-testimonial .cards-testimonial-card-image {
   line-height: 0;
+  display: none;
 }
 
-.cards-testimonial > ul > li img {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  object-fit: cover;
+.cards-testimonial .cards-testimonial-card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-testimonial .cards-testimonial-card-body p {
+  font-size: var(--body-font-size-s);
+  color: var(--text-color-secondary);
+  line-height: 1.4;
+  margin: 0 0 8px;
+}
+
+/* Category eyebrow (Retail, Healthcare, etc.) */
+.cards-testimonial .cards-testimonial-card-body > p:first-child {
+  font-size: var(--body-font-size-s);
+  font-weight: 400;
+  color: var(--att-medium-blue);
+  margin: 0 0 12px;
+  text-transform: capitalize;
+}
+
+/* Quote heading */
+.cards-testimonial .cards-testimonial-card-body strong {
+  font-size: var(--heading-font-size-l);
+  font-weight: 400;
+  color: var(--text-color);
+  display: block;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+/* Attribution text */
+.cards-testimonial .cards-testimonial-card-body em {
+  font-size: var(--body-font-size-xs);
+  font-style: normal;
+  color: var(--grey-500);
+  display: block;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+/* CTA link */
+.cards-testimonial .cards-testimonial-card-body a:any-link {
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  color: var(--link-color);
+  text-decoration: none;
+  margin-top: 16px;
+  display: inline-block;
+}
+
+.cards-testimonial .cards-testimonial-card-body a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+@media (width >= 600px) {
+  .cards-testimonial > ul > li {
+    flex: 0 0 45%;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-testimonial > ul {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px;
+    overflow-x: visible;
+  }
+
+  .cards-testimonial > ul > li {
+    min-width: unset;
+    flex: unset;
+  }
 }

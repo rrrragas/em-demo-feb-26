@@ -1,27 +1,125 @@
+/* Cards Promo - AT&T promotional cards with images (Samsung, Device Protection, Fiber) */
 .cards-promo > ul {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(257px, 1fr));
-  gap: 24px;
+  grid-template-columns: 1fr;
+  gap: 16px;
 }
 
 .cards-promo > ul > li {
-  border: 1px solid #dadada;
-  background-color: var(--background-color);
-}
-
-.cards-promo .cards-promo-card-body {
-  margin: 16px;
+  background-color: var(--light-color-alt);
+  border: none;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
 }
 
 .cards-promo .cards-promo-card-image {
   line-height: 0;
 }
 
-.cards-promo > ul > li img {
+.cards-promo .cards-promo-card-image img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
+}
+
+.cards-promo .cards-promo-card-body {
+  padding: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.cards-promo .cards-promo-card-body p {
+  font-size: var(--body-font-size-m);
+  color: var(--text-color-secondary);
+  line-height: 1.4;
+  margin: 0 0 8px;
+}
+
+/* Eyebrow text (first line before bold heading) */
+.cards-promo .cards-promo-card-body > p:first-child {
+  font-size: var(--heading-font-size-s);
+  font-weight: 400;
+  color: var(--text-color);
+  margin: 0 0 8px;
+}
+
+/* Card heading (bold text) */
+.cards-promo .cards-promo-card-body strong {
+  font-size: var(--heading-font-size-l);
+  font-weight: 400;
+  color: var(--text-color);
+  display: block;
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+/* Disclaimer text */
+.cards-promo .cards-promo-card-body em {
+  font-size: var(--body-font-size-xs);
+  font-style: normal;
+  color: var(--grey-500);
+  display: block;
+  margin-top: auto;
+  padding-top: 12px;
+}
+
+/* CTA link */
+.cards-promo .cards-promo-card-body a:any-link {
+  font-size: var(--body-font-size-s);
+  font-weight: 700;
+  color: var(--link-color);
+  text-decoration: none;
+  margin-top: 16px;
+}
+
+.cards-promo .cards-promo-card-body a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+@media (width >= 600px) {
+  .cards-promo > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* First card spans full width for emphasis */
+  .cards-promo > ul > li:first-child {
+    grid-column: 1 / -1;
+    flex-direction: row;
+  }
+
+  .cards-promo > ul > li:first-child .cards-promo-card-image {
+    flex: 0 0 50%;
+  }
+
+  .cards-promo > ul > li:first-child .cards-promo-card-image img {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+}
+
+@media (width >= 900px) {
+  .cards-promo > ul {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cards-promo > ul > li:first-child {
+    grid-column: auto;
+    flex-direction: column;
+  }
+
+  .cards-promo > ul > li:first-child .cards-promo-card-image {
+    flex: unset;
+  }
+
+  .cards-promo > ul > li:first-child .cards-promo-card-image img {
+    height: auto;
+    aspect-ratio: 16 / 9;
+  }
 }
