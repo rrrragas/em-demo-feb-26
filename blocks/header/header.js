@@ -158,6 +158,36 @@ export default async function decorate(block) {
     });
   }
 
+  // Build search box (visible on desktop only, hidden via CSS on mobile)
+  const navSearch = document.createElement('div');
+  navSearch.className = 'nav-search';
+  const searchForm = document.createElement('form');
+  searchForm.className = 'nav-search-form';
+  searchForm.setAttribute('role', 'search');
+  searchForm.addEventListener('submit', (e) => e.preventDefault());
+  const searchInput = document.createElement('input');
+  searchInput.type = 'search';
+  searchInput.placeholder = "Let's find what you need...";
+  searchInput.setAttribute('aria-label', 'Search AT&T business');
+  const searchBtn = document.createElement('button');
+  searchBtn.type = 'submit';
+  searchBtn.className = 'nav-search-btn';
+  searchBtn.setAttribute('aria-label', 'Search');
+  searchBtn.innerHTML = '<svg width="22" height="22" viewBox="0 0 14 14" fill="none"><path d="M10.725 10C12.6 7.738 12.366 4.402 10.194 2.424 8.022.446 4.679.524 2.601 2.601.524 4.679.446 8.022 2.424 10.194 4.402 12.366 7.738 12.6 10 10.725L14.13 14.855 14.84 14.145 10.725 10ZM6.5 11C4.015 11 2 8.985 2 6.5S4.015 2 6.5 2 11 4.015 11 6.5 8.985 11 6.5 11Z" fill="#1D2329"/></svg>';
+  searchForm.append(searchInput, searchBtn);
+  navSearch.append(searchForm);
+  nav.append(navSearch);
+
+  // Build account sign-in link (visible on desktop only, hidden via CSS on mobile)
+  const navAccount = document.createElement('div');
+  navAccount.className = 'nav-account';
+  const accountLink = document.createElement('a');
+  accountLink.href = 'https://www.att.com/acctmgmt/signin';
+  accountLink.className = 'nav-account-link';
+  accountLink.textContent = 'Account sign in';
+  navAccount.append(accountLink);
+  nav.append(navAccount);
+
   // hamburger for mobile
   const hamburger = document.createElement('div');
   hamburger.classList.add('nav-hamburger');

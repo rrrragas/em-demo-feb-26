@@ -205,6 +205,65 @@ header nav .nav-tools a:any-link {
   color: var(--text-color-secondary);
 }
 
+/* ===== Search box (desktop only) ===== */
+header nav .nav-search {
+  display: none;
+}
+
+header nav .nav-search-form {
+  display: flex;
+  align-items: center;
+  height: 36px;
+  border: 1px solid #686e74;
+  border-radius: 8px;
+  background-color: var(--background-color);
+  overflow: hidden;
+}
+
+header nav .nav-search-form input[type='search'] {
+  border: 0;
+  background: transparent;
+  font-size: 14px;
+  font-family: var(--body-font-family);
+  color: var(--text-color);
+  padding: 0 12px;
+  height: 100%;
+  width: 180px;
+  outline: none;
+}
+
+header nav .nav-search-form input[type='search']::placeholder {
+  color: var(--text-color-secondary);
+}
+
+header nav .nav-search-btn {
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* ===== Account sign in (desktop only) ===== */
+header nav .nav-account {
+  display: none;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+header nav .nav-account-link {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color-secondary);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+header nav .nav-account-link:hover {
+  color: var(--att-blue);
+}
+
 /* ===== Top utility bar (desktop only) ===== */
 header .nav-top-bar {
   background-color: #f3f4f6;
@@ -415,6 +474,19 @@ header .nav-top-tools a:hover {
   /* stylelint-disable-next-line no-descending-specificity */
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     padding: 8px 0;
+  }
+
+  /* Show search and account in main nav on desktop */
+  header nav .nav-search {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  header nav .nav-account {
+    display: flex;
+    align-items: center;
+    margin-left: 24px;
   }
 
   /* Hide tools in main nav on desktop (shown in top bar instead) */
