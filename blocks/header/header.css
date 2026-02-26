@@ -296,6 +296,10 @@ header .nav-top-tools a:hover {
 
 /* ===== Desktop layout ===== */
 @media (width >= 900px) {
+  header {
+    height: 111px; /* 30px top bar + 81px main nav */
+  }
+
   header .nav-wrapper {
     position: relative;
   }
@@ -312,7 +316,7 @@ header .nav-top-tools a:hover {
     gap: 0;
     max-width: 1324px;
     padding: 0 32px;
-    height: 68px;
+    height: 81px;
     min-height: 0;
     overflow: visible;
   }
