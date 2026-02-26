@@ -1,4 +1,3 @@
-
 function updateActiveSlide(slide) {
   const block = slide.closest('.carousel-industry');
   const slideIndex = parseInt(slide.dataset.slideIndex, 10);
