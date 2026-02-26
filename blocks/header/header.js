@@ -164,8 +164,36 @@ export default async function decorate(block) {
   toggleMenu(nav, navSections, isDesktop.matches);
   isDesktop.addEventListener('change', () => toggleMenu(nav, navSections, isDesktop.matches));
 
+  // build two-tier header: top utility bar + main nav
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
+
+  // create top utility bar with tools (Support, Contact Sales)
+  const topBar = document.createElement('div');
+  topBar.className = 'nav-top-bar';
+  const topBarInner = document.createElement('div');
+  topBarInner.className = 'nav-top-bar-inner';
+
+  // add Personal | Business toggle on left
+  const segmentToggle = document.createElement('div');
+  segmentToggle.className = 'nav-segment';
+  segmentToggle.innerHTML = '<a href="https://www.att.com/?customerType=personal">Personal</a>'
+    + '<span class="nav-segment-divider">|</span>'
+    + '<a href="https://www.business.att.com" class="nav-segment-active">Business</a>';
+  topBarInner.append(segmentToggle);
+
+  // move tools to top bar right side
+  const navTools = nav.querySelector('.nav-tools');
+  if (navTools) {
+    const topTools = document.createElement('div');
+    topTools.className = 'nav-top-tools';
+    topTools.append(navTools.querySelector('.default-content-wrapper'));
+    topBarInner.append(topTools);
+    navTools.remove();
+  }
+  topBar.append(topBarInner);
+
+  navWrapper.append(topBar);
   navWrapper.append(nav);
   block.append(navWrapper);
 }
