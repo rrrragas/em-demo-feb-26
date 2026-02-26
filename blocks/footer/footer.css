@@ -1,20 +1,175 @@
+/* AT&T Business footer */
 footer {
-  background-color: var(--light-color);
+  background-color: var(--background-color);
   font-size: var(--body-font-size-xs);
+  color: var(--text-color);
 }
 
-footer .footer > div {
+footer .footer > div > div {
   margin: auto;
-  max-width: 1200px;
-  padding: 40px 24px 24px;
+  max-width: 1324px;
+  padding: 0 16px;
 }
 
 footer .footer p {
   margin: 0;
 }
 
+/* First section: logo + social links (teal banner) */
+footer .footer > div > div:first-child {
+  max-width: unset;
+  padding: 16px 32px;
+  background-color: var(--att-accent-blue);
+}
+
+footer .footer > div > div:first-child .default-content-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1324px;
+  margin: 0 auto;
+}
+
+footer .footer > div > div:first-child picture {
+  display: flex;
+  align-items: center;
+}
+
+footer .footer > div > div:first-child img {
+  width: 161px;
+  height: auto;
+  filter: brightness(0) invert(1);
+}
+
+/* Social links in teal banner */
+footer .footer > div > div:first-child ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+footer .footer > div > div:first-child a:any-link {
+  color: var(--text-color-inverted);
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+footer .footer > div > div:first-child a:hover {
+  text-decoration: underline;
+}
+
+/* Second section: category links grid */
+footer .footer > div > div:nth-child(2) {
+  padding: 32px 32px 0;
+}
+
+footer .footer > div > div:nth-child(2) > .default-content-wrapper > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+footer .footer > div > div:nth-child(2) > .default-content-wrapper > ul > li > p {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 8px;
+}
+
+footer .footer > div > div:nth-child(2) > .default-content-wrapper > ul > li > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+footer .footer > div > div:nth-child(2) a:any-link {
+  font-size: 14px;
+  color: var(--text-color-secondary);
+  text-decoration: none;
+  line-height: 2;
+}
+
+footer .footer > div > div:nth-child(2) a:hover {
+  text-decoration: underline;
+}
+
+/* Third section: utility links */
+footer .footer > div > div:nth-child(3) {
+  padding: 32px 32px 0;
+  border-top: 1px solid var(--grey-200);
+}
+
+footer .footer > div > div:nth-child(3) a:any-link {
+  font-size: 16px;
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 400;
+}
+
+footer .footer > div > div:nth-child(3) a:hover {
+  text-decoration: underline;
+}
+
+/* Fourth section: legal links + copyright */
+footer .footer > div > div:nth-child(4) {
+  padding: 32px 32px 40px;
+}
+
+footer .footer > div > div:nth-child(4) .default-content-wrapper > p:first-child a:any-link {
+  font-size: 12px;
+  color: var(--text-color-secondary);
+  text-decoration: none;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+footer .footer > div > div:nth-child(4) .default-content-wrapper > p:first-child a:hover {
+  text-decoration: underline;
+}
+
+/* Copyright paragraph */
+footer .footer > div > div:nth-child(4) .default-content-wrapper > p:last-child {
+  font-size: 11px;
+  color: var(--text-color);
+  line-height: 1.45;
+  margin-top: 16px;
+}
+
+/* Horizontal rules as dividers */
+footer .footer hr {
+  border: none;
+  border-top: 1px solid var(--grey-200);
+  margin: 0;
+}
+
 @media (width >= 900px) {
-  footer .footer > div {
-    padding: 40px 32px 24px;
+  footer .footer > div > div {
+    padding: 0 58px;
+  }
+
+  footer .footer > div > div:first-child {
+    padding: 16px 58px;
+  }
+
+  footer .footer > div > div:nth-child(2) {
+    padding: 48px 58px 0;
+  }
+
+  footer .footer > div > div:nth-child(2) > .default-content-wrapper > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  footer .footer > div > div:nth-child(3) {
+    padding: 32px 58px 0;
+  }
+
+  footer .footer > div > div:nth-child(4) {
+    padding: 32px 58px 40px;
   }
 }
