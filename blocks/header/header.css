@@ -26,7 +26,8 @@ header nav {
 header nav[aria-expanded='true'] {
   grid-template:
     'hamburger brand' var(--nav-height)
-    'sections sections' 1fr / auto 1fr;
+    'sections sections' 1fr
+    'tools tools' var(--nav-height) / auto 1fr;
   overflow-y: auto;
   min-height: 100dvh;
 }
@@ -129,9 +130,20 @@ header .nav-brand {
   line-height: 1;
 }
 
+header nav .nav-brand ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
 header nav .nav-brand img {
   width: 161px;
   height: auto;
+}
+
+header nav .nav-brand a {
+  display: flex;
+  align-items: center;
 }
 
 /* ===== Nav sections ===== */
@@ -167,7 +179,7 @@ header nav .nav-sections ul > li > ul > li {
   font-weight: 400;
 }
 
-/* ===== Mobile tools (shown inside mobile menu only) ===== */
+/* ===== Tools (mobile: in nav, desktop: hidden, shown in top bar) ===== */
 header nav .nav-tools {
   grid-area: tools;
   display: flex;
@@ -206,8 +218,8 @@ header .nav-top-bar-inner {
   max-width: 1324px;
   margin: 0 auto;
   padding: 0 32px;
-  height: 36px;
-  font-size: 12px;
+  height: 30px;
+  font-size: 14px;
 }
 
 /* Personal | Business segment toggle */
@@ -221,8 +233,8 @@ header .nav-segment {
 header .nav-segment a {
   color: var(--text-color-secondary);
   text-decoration: none;
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
@@ -246,6 +258,7 @@ header .nav-top-tools {
   align-items: center;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 header .nav-top-tools .default-content-wrapper > ul {
   list-style: none;
   padding: 0;
@@ -268,9 +281,10 @@ header .nav-top-tools .default-content-wrapper > ul > li + li::before {
   font-weight: 300;
 }
 
+/* stylelint-disable-next-line no-descending-specificity */
 header .nav-top-tools a:any-link {
-  font-size: 12px;
-  font-weight: 400;
+  font-size: 14px;
+  font-weight: 500;
   color: var(--text-color-secondary);
   text-decoration: none;
 }
@@ -290,7 +304,8 @@ header .nav-top-tools a:hover {
     display: block;
   }
 
-  header nav {
+  header nav,
+  header nav[aria-expanded='true'] {
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -298,9 +313,6 @@ header .nav-top-tools a:hover {
     max-width: 1324px;
     padding: 0 32px;
     height: 68px;
-  }
-
-  header nav[aria-expanded='true'] {
     min-height: 0;
     overflow: visible;
   }
@@ -314,14 +326,12 @@ header .nav-top-tools a:hover {
     margin-right: 40px;
   }
 
-  header nav .nav-sections {
+  header nav .nav-sections,
+  header nav[aria-expanded='true'] .nav-sections {
     display: flex;
     visibility: visible;
     white-space: nowrap;
     align-items: center;
-  }
-
-  header nav[aria-expanded='true'] .nav-sections {
     align-self: unset;
   }
 
@@ -398,7 +408,13 @@ header .nav-top-tools a:hover {
     border-bottom: 8px solid var(--background-color);
   }
 
+  /* stylelint-disable-next-line no-descending-specificity */
   header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
     padding: 8px 0;
+  }
+
+  /* Hide tools in main nav on desktop (shown in top bar instead) */
+  header nav .nav-tools {
+    display: none;
   }
 }

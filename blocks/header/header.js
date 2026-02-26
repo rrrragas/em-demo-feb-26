@@ -131,10 +131,17 @@ export default async function decorate(block) {
   });
 
   const navBrand = nav.querySelector('.nav-brand');
-  const brandLink = navBrand.querySelector('.button');
-  if (brandLink) {
-    brandLink.className = '';
-    brandLink.closest('.button-container').className = '';
+  if (navBrand) {
+    const brandLink = navBrand.querySelector('a');
+    const brandPicture = navBrand.querySelector('picture');
+    if (brandLink && brandPicture) {
+      brandLink.textContent = '';
+      brandLink.append(brandPicture);
+    }
+    if (brandLink?.classList.contains('button')) {
+      brandLink.className = '';
+      brandLink.closest('.button-container')?.classList.remove('button-container');
+    }
   }
 
   const navSections = nav.querySelector('.nav-sections');
@@ -168,13 +175,13 @@ export default async function decorate(block) {
   const navWrapper = document.createElement('div');
   navWrapper.className = 'nav-wrapper';
 
-  // create top utility bar with tools (Support, Contact Sales)
+  // create top utility bar (desktop only, hidden via CSS on mobile)
   const topBar = document.createElement('div');
   topBar.className = 'nav-top-bar';
   const topBarInner = document.createElement('div');
   topBarInner.className = 'nav-top-bar-inner';
 
-  // add Personal | Business toggle on left
+  // Personal | Business toggle on left
   const segmentToggle = document.createElement('div');
   segmentToggle.className = 'nav-segment';
   segmentToggle.innerHTML = '<a href="https://www.att.com/?customerType=personal">Personal</a>'
@@ -182,17 +189,19 @@ export default async function decorate(block) {
     + '<a href="https://www.business.att.com" class="nav-segment-active">Business</a>';
   topBarInner.append(segmentToggle);
 
-  // move tools to top bar right side
+  // Clone tools links into top bar (original stays in nav for mobile)
   const navTools = nav.querySelector('.nav-tools');
   if (navTools) {
     const topTools = document.createElement('div');
     topTools.className = 'nav-top-tools';
-    topTools.append(navTools.querySelector('.default-content-wrapper'));
+    const toolsClone = navTools.querySelector('.default-content-wrapper');
+    if (toolsClone) {
+      topTools.append(toolsClone.cloneNode(true));
+    }
     topBarInner.append(topTools);
-    navTools.remove();
   }
-  topBar.append(topBarInner);
 
+  topBar.append(topBarInner);
   navWrapper.append(topBar);
   navWrapper.append(nav);
   block.append(navWrapper);
