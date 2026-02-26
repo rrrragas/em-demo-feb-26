@@ -1,0 +1,32 @@
+{
+  "variantName": "cards-testimonial",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-02-26T05:42:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.business.att.com/",
+    "originPage": "AT&T Business homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "customer-testimonials",
+    "imagePattern": "noimg",
+    "structure": "tag + quoted heading + description + attribution + CTA"
+  },
+  "contentPattern": {
+    "structure": "4 testimonial cards with quotes and attributions",
+    "buttonCount": 4,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": ["customer story sections", "testimonial carousels", "case study previews"],
+    "notSuitableFor": ["product listings", "feature grids", "image galleries"]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-26T05:42:00.000Z"
+  }
+}

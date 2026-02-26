@@ -1,0 +1,32 @@
+{
+  "variantName": "columns-links",
+  "baseBlock": "columns",
+  "version": "1.0.0",
+  "created": "2026-02-26T05:42:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://www.business.att.com/",
+    "originPage": "AT&T Business homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "grey",
+    "density": "compact",
+    "purpose": "link-directory",
+    "imagePattern": "noimg",
+    "structure": "4 columns of categorized link lists"
+  },
+  "contentPattern": {
+    "structure": "4 columns of link lists",
+    "buttonCount": 0,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": ["link directories", "sitemap sections", "footer link columns"],
+    "notSuitableFor": ["image-heavy layouts", "feature comparisons", "award banners"]
+  },
+  "usage": {
+    "pagesUsing": ["content/index"],
+    "reuseCount": 1,
+    "lastUsed": "2026-02-26T05:42:00.000Z"
+  }
+}
