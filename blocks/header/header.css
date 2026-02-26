@@ -422,3 +422,21 @@ header .nav-top-tools a:hover {
     display: none;
   }
 }
+
+/* ===== Desktop 1280px+ ===== */
+@media (width >= 1280px) {
+  header .nav-top-bar-inner {
+    max-width: 1310px;
+    padding: 0 15px;
+  }
+
+  header nav,
+  header nav[aria-expanded='true'] {
+    max-width: 1310px;
+    padding: 0 15px;
+  }
+
+  header nav .nav-sections .default-content-wrapper > ul > li {
+    padding: 0 10px;
+  }
+}
