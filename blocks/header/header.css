@@ -511,4 +511,13 @@ header .nav-top-tools a:hover {
   header nav .nav-sections .default-content-wrapper > ul > li {
     padding: 0 10px;
   }
+
+  /* Hide dropdown chevrons on desktop — source site has none */
+  header nav .nav-sections .nav-drop {
+    padding-right: 10px;
+  }
+
+  header nav .nav-sections .nav-drop::after {
+    display: none;
+  }
 }
