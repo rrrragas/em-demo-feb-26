@@ -1,4 +1,8 @@
-/* Hero Dark - AT&T dark background hero with image */
+/* Hero Dark - full-width background image with text overlay */
+main .section.hero-dark-container {
+  padding: 0;
+}
+
 .hero-dark-container .hero-dark-wrapper {
   max-width: unset;
   padding: 0;
@@ -8,93 +12,165 @@
   position: relative;
   display: flex;
   align-items: center;
-  padding: 48px 24px;
   min-height: 400px;
   overflow: hidden;
+  padding: 48px 24px;
 }
 
-/* Background image positioning */
-.hero-dark picture {
+/* Background image - absolutely positioned behind everything */
+.hero-dark .hero-dark-bg {
   position: absolute;
-  z-index: -1;
   inset: 0;
+  z-index: 0;
 }
 
-.hero-dark img {
-  object-fit: cover;
+.hero-dark .hero-dark-bg picture {
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.hero-dark .hero-dark-bg img {
   width: 100%;
   height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-/* Content container */
-.hero-dark > div:last-child {
+/* Content area */
+.hero-dark .hero-dark-content {
   position: relative;
   z-index: 1;
-  max-width: var(--content-max-width);
-  margin: 0 auto;
+  max-width: 616px;
   width: 100%;
-}
-
-/* Description */
-.hero-dark p {
-  color: var(--text-color-inverted);
-  font-size: var(--body-font-size-m);
-  line-height: 1.4;
-  max-width: 600px;
 }
 
 /* Eyebrow text */
-.hero-dark > div:last-child > p:first-child {
-  font-size: var(--heading-font-size-s);
+.hero-dark .hero-dark-eyebrow {
+  font-size: 14px;
   font-weight: 400;
-  color: var(--text-color-inverted);
-  margin: 0 0 8px;
+  color: #fff;
+  margin: 0;
   line-height: 1.4;
 }
 
 /* Heading */
-.hero-dark h1,
 .hero-dark h2 {
-  font-size: var(--heading-font-size-xxl);
+  font-size: 36px;
   font-weight: 400;
-  color: var(--text-color-inverted);
+  color: #fff;
   line-height: 1.15;
-  letter-spacing: -0.03em;
   margin: 8px 0 16px;
-  max-width: 600px;
 }
 
-/* Disclaimer text */
-.hero-dark em {
-  font-size: var(--body-font-size-xs);
+/* Description */
+.hero-dark .hero-dark-description {
+  font-size: 16px;
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.4;
+  margin: 0;
+}
+
+/* Disclaimer */
+.hero-dark .hero-dark-disclaimer {
+  font-size: 12px;
   font-style: normal;
-  color: rgb(255 255 255 / 80%);
-}
-
-/* No-image variant */
-.hero-dark.no-image {
-  background-color: var(--dark-color);
-  min-height: auto;
-}
-
-/* Links */
-.hero-dark a:any-link {
-  color: var(--light-color);
-}
-
-/* Button wrapper */
-.hero-dark .button-wrapper {
+  color: #fff;
+  line-height: 1.2;
   margin: 16px 0 0;
 }
 
+/* Bullet list */
+.hero-dark .hero-dark-list {
+  list-style: none;
+  margin: 16px 0;
+  padding: 0;
+}
+
+.hero-dark .hero-dark-list li {
+  font-size: 16px;
+  color: #fff;
+  line-height: 2;
+  padding-left: 28px;
+  position: relative;
+}
+
+.hero-dark .hero-dark-list li::before {
+  content: '\2713';
+  position: absolute;
+  left: 0;
+}
+
+/* CTA container */
+.hero-dark .hero-dark-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* Primary button - light background (high specificity to override .section.dark a) */
+.hero-dark .hero-dark-content .hero-dark-cta a.hero-dark-btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f2fafd;
+  color: rgb(0 56 143);
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 28px;
+  padding: 0 32px;
+  height: 48px;
+}
+
+.hero-dark .hero-dark-content .hero-dark-cta a.hero-dark-btn-primary:hover {
+  background-color: #e0f0f8;
+  color: rgb(0 45 115);
+  text-decoration: none;
+}
+
+/* Secondary button - outline */
+.hero-dark .hero-dark-content .hero-dark-cta a.hero-dark-btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  color: #f2fafd;
+  font-size: 14px;
+  font-weight: 400;
+  text-decoration: none;
+  border-radius: 28px;
+  padding: 0 32px;
+  height: 48px;
+  border: 2px solid #f2fafd;
+}
+
+.hero-dark .hero-dark-content .hero-dark-cta a.hero-dark-btn-secondary:hover {
+  background-color: rgb(255 255 255 / 10%);
+  text-decoration: none;
+}
+
+/* Desktop styles */
 @media (width >= 900px) {
   .hero-dark {
-    padding: 64px 32px;
+    padding: 64px 48px;
     min-height: 480px;
   }
 
-  .hero-dark h1,
   .hero-dark h2 {
-    max-width: 700px;
+    font-size: 48px;
+  }
+
+  .hero-dark .hero-dark-description {
+    font-size: 18px;
+    line-height: 1.4;
+  }
+}
+
+@media (width >= 1280px) {
+  .hero-dark .hero-dark-content {
+    margin-left: max(0px, calc((100% - 1324px) / 2));
   }
 }
