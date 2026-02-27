@@ -106,30 +106,62 @@ footer .footer > div > div:nth-child(3) {
   border-top: 1px solid var(--grey-200);
 }
 
-footer .footer > div > div:nth-child(3) a:any-link {
+/* Utility grid created by JS */
+footer .footer .footer-utility-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px 24px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+footer .footer .footer-utility-grid ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+footer .footer .footer-utility-grid a:any-link {
   font-size: 16px;
   color: var(--text-color);
   text-decoration: none;
   font-weight: 400;
+  line-height: 1.8;
 }
 
-footer .footer > div > div:nth-child(3) a:hover {
+/* stylelint-disable-next-line no-descending-specificity */
+footer .footer .footer-utility-grid a:hover {
   text-decoration: underline;
 }
 
 /* Fourth section: legal links + copyright */
 footer .footer > div > div:nth-child(4) {
-  padding: 32px 32px 40px;
+  padding: 24px 32px 40px;
+  border-top: 1px solid var(--grey-200);
 }
 
-footer .footer > div > div:nth-child(4) .default-content-wrapper > p:first-child a:any-link {
+/* Legal links list created by JS */
+footer .footer .footer-legal-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+footer .footer .footer-legal-links a:any-link {
   font-size: 12px;
   color: var(--text-color-secondary);
   text-decoration: none;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
-footer .footer > div > div:nth-child(4) .default-content-wrapper > p:first-child a:hover {
+footer .footer .footer-legal-links a:hover {
   text-decoration: underline;
 }
 
@@ -163,13 +195,31 @@ footer .footer hr {
 
   footer .footer > div > div:nth-child(2) > .default-content-wrapper > ul {
     grid-template-columns: repeat(4, 1fr);
+    gap: 16px 12.5%;
+  }
+
+  /* On desktop, hide sub-links and show only category names (matching source accordion collapsed state) */
+  footer .footer > div > div:nth-child(2) > .default-content-wrapper > ul > li > ul {
+    display: none;
+  }
+
+  footer .footer > div > div:nth-child(2) > .default-content-wrapper > ul > li > p {
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 0;
   }
 
   footer .footer > div > div:nth-child(3) {
     padding: 32px 58px 0;
+    margin-top: 48px;
+  }
+
+  footer .footer .footer-utility-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 16px 12.5%;
   }
 
   footer .footer > div > div:nth-child(4) {
-    padding: 32px 58px 40px;
+    padding: 24px 58px 40px;
   }
 }
