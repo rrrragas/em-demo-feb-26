@@ -2,6 +2,40 @@ import { getMetadata } from '../../scripts/aem.js';
 import { loadFragment } from '../fragment/fragment.js';
 
 /**
+ * Add accordion expand/collapse behavior to category links on desktop.
+ * Each top-level LI has a <p> (category name) and a nested <ul> (sub-links).
+ * On desktop, sub-links are hidden by default; clicking the header toggles them.
+ * @param {Element} section The category links section element
+ */
+function decorateCategoryAccordions(section) {
+  const dcw = section.querySelector('.default-content-wrapper');
+  if (!dcw) return;
+
+  const topUl = dcw.querySelector(':scope > ul');
+  if (!topUl) return;
+
+  [...topUl.children].forEach((li) => {
+    const heading = li.querySelector(':scope > p');
+    const subList = li.querySelector(':scope > ul');
+    if (!heading || !subList) return;
+
+    // Wrap the heading text in a button for accessibility
+    const btn = document.createElement('button');
+    btn.className = 'footer-accordion-btn';
+    btn.setAttribute('aria-expanded', 'false');
+    btn.textContent = heading.textContent;
+    heading.textContent = '';
+    heading.append(btn);
+
+    // Toggle sub-links on click
+    btn.addEventListener('click', () => {
+      const isOpen = li.classList.toggle('footer-accordion-open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
+}
+
+/**
  * Restructure utility links from pipe-separated paragraph into a grid of lists.
  * Source layout: 4-column grid, each column has 2 links stacked vertically.
  * @param {Element} section The utility links section element
@@ -80,6 +114,7 @@ export default async function decorate(block) {
 
   // Get the 4 sections: [0] teal banner, [1] categories, [2] utility, [3] legal
   const sections = footer.querySelectorAll('.section');
+  if (sections.length >= 2) decorateCategoryAccordions(sections[1]);
   if (sections.length >= 3) decorateUtilityLinks(sections[2]);
   if (sections.length >= 4) decorateLegalLinks(sections[3]);
 
